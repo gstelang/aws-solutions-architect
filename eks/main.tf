@@ -1,3 +1,5 @@
+# https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/examples/eks_managed_node_group/main.tf
+
 provider "aws" {
   region = local.region
 }
