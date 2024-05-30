@@ -8,11 +8,11 @@ data "aws_caller_identity" "current" {}
 data "aws_availability_zones" "available" {}
 
 locals {
-  name            = "ex-${replace(basename(path.cwd), "_", "-")}"
+  name            = "gtelang-cluster"
   cluster_version = "1.29"
-  region          = "eu-west-1"
+  region          = "eu-east-1"
 
-  vpc_cidr = "10.0.0.0/16"
+  vpc_cidr = "10.123.0.0/16"
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
 
   tags = {
@@ -27,7 +27,8 @@ locals {
 ################################################################################
 
 module "eks" {
-  source = "../.."
+  source  = "terraform-aws-modules/eks/aws"
+  version = "~> 20.0"
 
   cluster_name                   = local.name
   cluster_version                = local.cluster_version
