@@ -49,3 +49,10 @@ aws cloudformation describe-stack-events --stack-name demo-cfn
 }
 ```
 5. Test using catpics/ animalpics/
+
+# clean up resources
+1. Delete all the contents from the s3 bucket.
+2. Delete stack
+```yaml
+aws cloudformation delete-stack --stack-name demo-cfn 
+```
