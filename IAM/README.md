@@ -4,7 +4,7 @@
 [
     {
       "ParameterKey": "sallypassword",
-      "ParameterValue": "<strong-password"
+      "ParameterValue": "<strong-password>"
     }
 ]
 ```
